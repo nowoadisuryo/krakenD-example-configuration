@@ -1,0 +1,114 @@
+{
+  "$schema": "https://www.krakend.io/schema/v3.json",
+  "version": 3,
+  "name": "KrakenD - API Gateway",
+  "port": 8000,
+  "endpoints": [
+    {
+      "endpoint": "/plans",
+      "method": "GET",
+      "backend": [
+        {
+          "url_pattern": "/",
+          "method": "GET",
+          "host": [
+            "http://10.10.10.61:3001/"
+          ],
+		  "is_collection": true
+        }
+      ]
+    },
+    {
+      "endpoint": "/plans/{id}",
+      "method": "GET",
+      "backend": [
+        {
+          "url_pattern": "/{id}",
+          "method": "GET",
+          "host": [
+            "http://10.10.10.61:3001/"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/plans",
+      "method": "POST",
+      "backend": [
+        {
+          "url_pattern": "/",
+          "method": "POST",
+          "host": [
+            "http://10.10.10.61:3001/"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/plans/{id}",
+      "method": "DELETE",
+      "backend": [
+        {
+          "url_pattern": "/{id}",
+          "method": "DELETE",
+          "host": [
+            "http://10.10.10.61:3001/"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/subscriptions",
+      "method": "GET",
+      "backend": [
+        {
+          "url_pattern": "/",
+          "method": "GET",
+          "host": [
+            "http://10.10.10.61:3002/"
+          ],
+		  "is_collection": true
+        }
+      ]
+    },
+    {
+      "endpoint": "/subscriptions/{id}",
+      "method": "GET",
+      "backend": [
+        {
+          "url_pattern": "/{id}",
+          "method": "GET",
+          "host": [
+            "http://10.10.10.61:3002/"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/subscriptions",
+      "method": "POST",
+      "backend": [
+        {
+          "url_pattern": "/",
+          "method": "POST",
+          "host": [
+            "http://10.10.10.61:3002/"
+          ]
+        }
+      ]
+    },
+    {
+      "endpoint": "/subscriptions/{id}",
+      "method": "DELETE",
+      "backend": [
+        {
+          "url_pattern": "/{id}",
+          "method": "DELETE",
+          "host": [
+            "http://10.10.10.61:3002/"
+          ]
+        }
+      ]
+    }
+  ]
+}
